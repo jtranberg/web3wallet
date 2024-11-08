@@ -39,14 +39,16 @@ function App() {
   useEffect(() => {
     alert(
       "🔗 Welcome to the Modern Crypto Wallet! 🔗\n\n" +
-      "📌 This app allows you to securely connect your wallet and access various blockchain networks.\n\n" +
+      "📌 This is a demo application for exploring blockchain integrations. Please note:\n\n" +
+      "⚠️ This demo does not include security features or user registration. Use it for testing purposes only.\n\n" +
       "🛠️ To get started:\n" +
       "1️⃣ Connect your wallet using the 'Connect Wallet' button.\n" +
       "2️⃣ Choose your preferred blockchain network (Mainnet, Polygon, Optimism, or Arbitrum).\n" +
       "3️⃣ Once connected, you can access your Dashboard.\n\n" +
-      "⚠️ Please make sure your wallet is installed and properly set up before proceeding."
+      "🚨 IMPORTANT: Do not use real funds or sensitive information while using this demo."
     );
   }, []);
+  
 
   return (
     <WagmiConfig config={config}>
