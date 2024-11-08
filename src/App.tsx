@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { WagmiConfig, createConfig, configureChains } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
 import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
@@ -31,10 +31,22 @@ const queryClient = new QueryClient();
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleLogin = (email: string) => {
+  const handleLogin = () => {
     setIsAuthenticated(true);
-    // You could store the user's email or other data in state/context if needed
   };
+
+  // Use useEffect to show an alert when the app loads
+  useEffect(() => {
+    alert(
+      "🔗 Welcome to the Modern Crypto Wallet! 🔗\n\n" +
+      "📌 This app allows you to securely connect your wallet and access various blockchain networks.\n\n" +
+      "🛠️ To get started:\n" +
+      "1️⃣ Connect your wallet using the 'Connect Wallet' button.\n" +
+      "2️⃣ Choose your preferred blockchain network (Mainnet, Polygon, Optimism, or Arbitrum).\n" +
+      "3️⃣ Once connected, you can access your Dashboard.\n\n" +
+      "⚠️ Please make sure your wallet is installed and properly set up before proceeding."
+    );
+  }, []);
 
   return (
     <WagmiConfig config={config}>
